@@ -1,0 +1,22 @@
+services:
+  product-postgres:
+    image: postgres:16-alpine
+    container_name: product-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: "${DB_NAME:?DB_NAME no definido}"
+      POSTGRES_USER: "${DB_USER:?DB_USER no definido}"
+      POSTGRES_PASSWORD: "${DB_PASSWORD:?DB_PASSWORD no definido}"
+    ports:
+      - "127.0.0.1:${DB_PORT:-5433}:5432"
+    volumes:
+      - product_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    security_opt:
+      - no-new-privileges:true
+volumes:
+  product_postgres_data:
