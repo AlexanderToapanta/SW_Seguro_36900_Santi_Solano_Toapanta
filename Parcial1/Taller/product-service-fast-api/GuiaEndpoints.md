@@ -1,6 +1,6 @@
 > **Autenticación del taller:** todas las operaciones de productos, categorías y relaciones requieren `Authorization: Bearer <accessToken>`. Obtener el token mediante login en usuarios y pegarlo en **Authorize** de este Swagger. Los ejemplos de cuerpos de esta guía presuponen ese encabezado. `/health` es público. Usar las rutas exactas que muestra Swagger; las rutas de colección pueden terminar en `/`.
 >
-> Permisos: todos los roles leen; ADMIN/OPERADOR escriben productos y relaciones; solo ADMIN elimina productos o escribe categorías. Guía completa de ejecución y demostración: [Instrucciones.md](../Instrucciones.md).
+> Permisos: todos los roles leen; ADMIN/OPERADOR escriben productos y relaciones; solo ADMIN elimina productos o escribe categorías. Guía completa de ejecución y demostración: [README del taller](../README.md).
 
 # Descripción del microservicio
 

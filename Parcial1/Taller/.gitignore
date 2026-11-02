@@ -7,3 +7,6 @@
 **/coverage/
 **/*.tsbuildinfo
 **/*.log
+
+# Guía personal de ejecución local
+/Instrucciones.md

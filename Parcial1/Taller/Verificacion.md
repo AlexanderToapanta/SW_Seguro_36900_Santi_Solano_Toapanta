@@ -1,17 +1,16 @@
 # Verificación del taller — 2 de noviembre de 2026
 
-Alcance: los microservicios de usuarios y productos y su integración JWT/RBAC. El proyecto integrador queda fuera de este trabajo.
+Alcance: los microservicios de usuarios y productos y su integración JWT/RBAC.
 
 | Bloque | Comprobación ejecutada | Resultado |
 |---|---|---|
-| Traslado | Comparación SHA-256 antes/después de todos los archivos y enlaces de ambos proyectos; estado Git preservado | Correcto; originales trasladados, sin duplicar el código |
 | Usuarios | Migración inicial reconocida; prueba unitaria, lint y pruebas e2e | 1 prueba unitaria; lint sin errores; 16 escenarios e2e (17 entradas contando suite) aprobados |
 | Productos | Dependencias, PostgreSQL real temporal, contratos y errores HTTP simulados del servicio de usuarios | 20 pruebas aprobadas; `pip check` sin conflictos |
 | Integración | Dos APIs reales y dos bases temporales, sin sustituir la autenticación | 19 escenarios aprobados |
 
 ## Comprobación final con las bases locales
 
-Ambas APIs arrancaron en sus puertos de trabajo (3001 y 8000). Los dos Swagger y health respondieron 200; productos sin token devolvió 401; el login de `jperez` y la consulta de productos con su token funcionaron. Al terminar se detuvieron los procesos de comprobación y los dos contenedores PostgreSQL, conservando sus volúmenes.
+Ambas APIs arrancaron en sus puertos de trabajo (3001 y 8000). Los dos Swagger y health respondieron 200; productos sin token devolvió 401; el login de `jperez` y la consulta de productos con su token funcionaron.
 
 ## Cobertura relevante
 
@@ -37,4 +36,4 @@ Se completó la configuración local sin credenciales fijas en Compose, con puer
 
 Es una entrega local del taller, no una certificación de despliegue productivo. Las bases corren en Docker y las APIs en procesos locales. Productos crea sus tablas al inicializarse; no se agregó un sistema de migraciones ni una interfaz gráfica, porque no son parte de esta integración. El endpoint health de productos no comprueba la disponibilidad de usuarios. El límite de usuarios puede limitar el tráfico agregado de productos desde una misma IP.
 
-Las pruebas automatizadas crean y eliminan bases temporales; no reinicializan las bases de trabajo. Los comandos para reproducirlas y la demostración manual están en [Instrucciones.md](Instrucciones.md).
+Las pruebas automatizadas crean y eliminan bases temporales; no reinicializan las bases de trabajo. Los comandos para reproducirlas y la demostración manual están en [README del taller](README.md).

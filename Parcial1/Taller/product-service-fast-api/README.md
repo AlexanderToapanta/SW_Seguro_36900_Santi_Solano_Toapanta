@@ -2,7 +2,7 @@
 
 FastAPI, SQLAlchemy y PostgreSQL para productos, categorías y sus relaciones. Autentica cada petición protegida consultando `/api/v1/auth/me` del microservicio NestJS de usuarios; aplica permisos ADMIN, OPERADOR y CLIENTE sin compartir el secreto JWT.
 
-La guía de arranque, demostración, cuentas y preparación desde cero está en [Instrucciones.md](../Instrucciones.md). Los resultados están en [Verificacion.md](../Verificacion.md). El enunciado detallado se conserva en [TallerJWT.md](TallerJWT.md) y las operaciones en [GuiaEndpoints.md](GuiaEndpoints.md).
+La guía de arranque, demostración, cuentas y preparación desde cero está en [README del taller](../README.md). Los resultados están en [Verificacion.md](../Verificacion.md). El enunciado detallado se conserva en [TallerJWT.md](TallerJWT.md) y las operaciones en [GuiaEndpoints.md](GuiaEndpoints.md).
 
 ## Arranque local
 
